@@ -1,0 +1,46 @@
+﻿@model IEnumerable<MoviesWeb.ViewModels.GenreDataInfo>
+
+@{
+    ViewBag.Title = "About";
+}
+
+<h2>About</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.GenreName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GenreCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalGross)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AverageRating)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.GenreName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GenreCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalGross)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AverageRating)
+        </td>
+    </tr>
+}
+
+</table>

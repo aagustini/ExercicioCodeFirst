@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/jqueryui")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+
+            <nav class="navbar navbar-inverse" style="border:0px;">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="\"><img src="~/Images/filmstripe.jpg" width="100" /></a>
+                    </div>
+
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Movies", "Index", "Movie")</li>
+                        <li>@Html.ActionLink("Genres", "Index", "Genre")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+                @{Html.RenderAction("GenreMenu", "Movie");}
+            </nav>
+        </div>
+    </div>
+
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryui")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

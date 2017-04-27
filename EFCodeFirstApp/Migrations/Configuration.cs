@@ -70,12 +70,174 @@ namespace EFCodeFirstApp.Migrations
             new Movie { Title = "Monty Python and the Holy Grail", Director = " Terry Gilliam & Terry Jones", ReleaseDate = DateTime.Parse("5/23/1975",new CultureInfo("en-US")), GenreID =  genres.Single( g => g.Name == "Comedy").GenreID,Gross=1229197, Rating = 8.3 },
             new Movie { Title = "2001: A Space Odyssey", Director = "Stanley Kubrick", ReleaseDate = DateTime.Parse("4/29/1968",new CultureInfo("en-US")), GenreID =  genres.Single( g => g.Name == "Sci-Fi").GenreID,Gross = 56715371, Rating = 8.3 },
             new Movie { Title = "Back to the Future", Director = "Robert Zemeckis", ReleaseDate = DateTime.Parse("1/22/1989",new CultureInfo("en-US")), GenreID =  genres.Single( g => g.Name == "Family").GenreID,Gross = 210609762, Rating = 8.5},
-            new Movie { Title = "Monsters Inc", Director = "Pete Docter & David Silverman", ReleaseDate = DateTime.Parse("11/2/2001",new CultureInfo("en-US")), GenreID =  genres.Single( g => g.Name == "Family").GenreID,Gross = 289907418, Rating = 8.1}
-
+            new Movie { Title = "Monsters Inc", Director = "Pete Docter & David Silverman", ReleaseDate = DateTime.Parse("11/2/2001",new CultureInfo("en-US")), GenreID =  genres.Single( g => g.Name == "Family").GenreID,Gross = 289907418, Rating = 8.1},
+ 
+            new Movie { Title = "Jurassic Park", Director = "Steven Spielberg", ReleaseDate = DateTime.Parse("06/25/1993",new CultureInfo("en-US")), GenreID =  genres.Single( g => g.Name == "Thriller").GenreID,Gross =356784000 , Rating = 8.1},
+            new Movie { Title = "The Empire Strikes Back", Director = "Irvin Kershner", ReleaseDate = DateTime.Parse("07/21/1980",new CultureInfo("en-US")), GenreID =  genres.Single( g => g.Name == "Sci-Fi").GenreID,Gross =290158751 , Rating = 8.8},
+            new Movie { Title = "Return of the Jedi", Director = "Richard Marquand", ReleaseDate = DateTime.Parse("06/10/1983",new CultureInfo("en-US")), GenreID =  genres.Single( g => g.Name == "Sci-Fi").GenreID,Gross = 309125409 , Rating = 8.4},
+            new Movie { Title = "GoldenEye", Director = "Martin Campbell", ReleaseDate = DateTime.Parse("12/15/1995",new CultureInfo("en-US")), GenreID =  genres.Single( g => g.Name == "Action").GenreID,Gross =106635996 , Rating = 7.2 },
+            new Movie { Title = "The World Is Not Enough", Director = "Michael Apted", ReleaseDate = DateTime.Parse("12/24/1999",new CultureInfo("en-US")), GenreID =  genres.Single( g => g.Name == "Action").GenreID,Gross =126930660 , Rating = 6.4 },
+            new Movie { Title = "Die Another Day", Director = "Lee Tamahori", ReleaseDate = DateTime.Parse("01/10/2003",new CultureInfo("en-US")), GenreID =  genres.Single( g => g.Name == "Action").GenreID,Gross = 160201106, Rating = 6.1},
+            new Movie { Title = "Tomorrow Never Dies", Director = "Roger Spottiswoode", ReleaseDate = DateTime.Parse("01/16/1998",new CultureInfo("en-US")), GenreID =  genres.Single( g => g.Name == "Action").GenreID,Gross = 125332007, Rating = 6.5},
+            new Movie { Title = "Skyfall", Director = "Sam Mendes", ReleaseDate = DateTime.Parse("10/26/2012",new CultureInfo("en-US")), GenreID =  genres.Single( g => g.Name == "Action").GenreID,Gross = 304360277, Rating = 7.8},
+            new Movie { Title = "Casino Royale", Director = "Martin Campbell", ReleaseDate = DateTime.Parse("12/15/2006",new CultureInfo("en-US")), GenreID =  genres.Single( g => g.Name == "Action").GenreID,Gross = 167007184, Rating = 8.0}
             };
 
             movies.ForEach(s => context.Movies.AddOrUpdate(f => f.Title, s));
             context.SaveChanges();
+
+            //
+            // inicio
+            //
+
+
+
+            var actors = new List<Actor>
+            {
+ 
+                #region Jurassic Park
+                new Actor{ Name = "Jeff Goldblum", DateBirth =   DateTime.Parse("9/22/1952",new CultureInfo("en-US")) },
+                new Actor{ Name = "Sam Neill", DateBirth =   DateTime.Parse("9/14/1947",new CultureInfo("en-US")) },
+                new Actor{ Name = "Laura Dern", DateBirth =   DateTime.Parse("2/10/1967",new CultureInfo("en-US")) },
+                new Actor{ Name = "Richard Attenborough", DateBirth =   DateTime.Parse("8/29/1923",new CultureInfo("en-US")) },
+                new Actor{ Name = "Samuel L. Jackson", DateBirth =   DateTime.Parse("12/21/1948",new CultureInfo("en-US")) },
+               #endregion
+ 
+                #region Star Wars
+                new Actor{ Name = "Mark Hamill",DateBirth =   DateTime.Parse("9/25/1951",new CultureInfo("en-US")) },
+                new Actor{ Name = "Carrie Fisher",DateBirth =   DateTime.Parse("10/21/1956",new CultureInfo("en-US")) },
+                new Actor{ Name = "Harrison Ford",DateBirth =   DateTime.Parse("7/13/1942",new CultureInfo("en-US")) },
+                new Actor{ Name = "David Prowse",DateBirth =   DateTime.Parse("7/1/1935",new CultureInfo("en-US")) },
+                #endregion
+ 
+                #region Forrest Gump
+                new Actor{ Name = "Tom Hanks", DateBirth =   DateTime.Parse("7/9/1956",new CultureInfo("en-US")) },
+                new Actor{ Name = "Robin Wright", DateBirth =   DateTime.Parse("4/8/1966",new CultureInfo("en-US")) },
+                new Actor{ Name = "Gary Sinise", DateBirth =   DateTime.Parse("3/17/1955",new CultureInfo("en-US")) },
+                #endregion
+ 
+                #region GoldenEye
+                new Actor{ Name = "Pierce Brosnan", DateBirth =   DateTime.Parse("5/16/1953",new CultureInfo("en-US")) },
+                new Actor{ Name = "Famke Janssen", DateBirth =   DateTime.Parse("9/5/1964",new CultureInfo("en-US")) },
+                new Actor{ Name = "Judi Dench", DateBirth =   DateTime.Parse("12/9/1934",new CultureInfo("en-US")) },
+               #endregion
+ 
+                #region The World Is Not Enough
+                new Actor{ Name = "Sophie Marceau", DateBirth =   DateTime.Parse("11/17/1966",new CultureInfo("en-US")) },
+                #endregion
+ 
+                #region Die Another Day
+                new Actor{ Name = "Halle Berry", DateBirth =   DateTime.Parse("8/14/1966",new CultureInfo("en-US")) },
+                #endregion
+ 
+                #region Tomorrow Never Dies
+                new Actor{ Name = "Michelle Yeoh", DateBirth =   DateTime.Parse("8/6/1962",new CultureInfo("en-US")) },
+                #endregion
+               
+                #region Skyfall
+                new Actor{ Name = "Daniel Craig", DateBirth =   DateTime.Parse("3/2/1968",new CultureInfo("en-US")) },
+                new Actor{ Name = "Javier Bardem", DateBirth =   DateTime.Parse("3/1/1969",new CultureInfo("en-US")) },
+                #endregion
+ 
+                #region Casino Royale
+                new Actor{ Name = "Eva Green", DateBirth =   DateTime.Parse("7/6/1980",new CultureInfo("en-US")) },
+                new Actor{ Name = "Mads Mikkelsen", DateBirth =   DateTime.Parse("11/22/1965",new CultureInfo("en-US")) },
+                #endregion
+            };
+
+            actors.ForEach(s => context.Actors.AddOrUpdate(a => a.Name, s));
+            context.SaveChanges();
+
+            var actorCharacters = new List<ActorMovie>() {
+ 
+            #region Jurassic Park
+            new ActorMovie { ActorId = actors.Single(g => g.Name == "Jeff Goldblum").ActorId,
+                                                    Character =  "Ian Malcolm",
+                                                    MovieId = movies.Single(g => g.Title == "Jurassic Park").ID },
+            new ActorMovie { ActorId = actors.Single( g => g.Name == "Sam Neill").ActorId,  Character =  "Alan Grant", MovieId = movies.Single(g => g.Title == "Jurassic Park").ID },
+            new ActorMovie { ActorId = actors.Single( g => g.Name == "Laura Dern").ActorId,  Character =  "Ellie Sattler", MovieId = movies.Single(g => g.Title == "Jurassic Park").ID },
+            new ActorMovie { ActorId = actors.Single( g => g.Name == "Richard Attenborough").ActorId,  Character =  "John Hammond", MovieId = movies.Single(g => g.Title == "Jurassic Park").ID },
+            new ActorMovie { ActorId = actors.Single( g => g.Name == "Samuel L. Jackson").ActorId,  Character =  "Ray Arnold", MovieId = movies.Single(g => g.Title == "Jurassic Park").ID },
+            #endregion
+ 
+            #region SW
+            new ActorMovie { ActorId = actors.Single(g => g.Name == "Mark Hamill").ActorId, Character =  "Luke Skywalker", MovieId = movies.Single(g => g.Title == "Star Wars").ID },
+            new ActorMovie { ActorId = actors.Single( g => g.Name == "Carrie Fisher").ActorId,  Character =  "Leia Organa", MovieId = movies.Single(g => g.Title == "Star Wars").ID },
+            new ActorMovie { ActorId = actors.Single( g => g.Name == "Harrison Ford").ActorId,  Character =  "Han Solo", MovieId = movies.Single(g => g.Title == "Star Wars").ID },
+            new ActorMovie { ActorId = actors.Single( g => g.Name == "David Prowse").ActorId,  Character =  "Darth Vader", MovieId = movies.Single(g => g.Title == "Star Wars").ID },
+            #endregion
+ 
+ 
+ 
+            #region Forrest Gump
+            new ActorMovie { ActorId = actors.Single(g => g.Name == "Tom Hanks").ActorId, Character =  "Forrest Gump", MovieId = movies.Single(g => g.Title == "Forrest Gump").ID },
+                new ActorMovie { ActorId = actors.Single(g => g.Name == "Robin Wright").ActorId, Character =  "Jenny Curran", MovieId = movies.Single(g => g.Title == "Forrest Gump").ID },
+                new ActorMovie { ActorId = actors.Single(g => g.Name == "Gary Sinise").ActorId, Character =  "Lieutenant Dan Taylor", MovieId = movies.Single(g => g.Title == "Forrest Gump").ID },
+                #endregion
+ 
+ 
+               #region Empire
+               new ActorMovie { ActorId = actors.Single(g => g.Name == "Mark Hamill").ActorId, Character =  "Luke Skywalker", MovieId = movies.Single(g => g.Title == "The Empire Strikes Back").ID },
+               new ActorMovie { ActorId = actors.Single(g => g.Name == "Carrie Fisher").ActorId, Character =  "Leia Organa", MovieId = movies.Single(g => g.Title == "The Empire Strikes Back").ID },
+               new ActorMovie { ActorId = actors.Single(g => g.Name == "Harrison Ford").ActorId, Character =  "Han Solo", MovieId = movies.Single(g => g.Title == "The Empire Strikes Back").ID },
+               new ActorMovie { ActorId = actors.Single(g => g.Name == "David Prowse").ActorId, Character =  "Darth Vader", MovieId = movies.Single(g => g.Title == "The Empire Strikes Back").ID },
+               #endregion
+ 
+               #region Jedi
+               new ActorMovie { ActorId = actors.Single(g => g.Name == "Mark Hamill").ActorId, Character =  "Luke Skywalker", MovieId = movies.Single(g => g.Title == "Return of the Jedi").ID },
+               new ActorMovie { ActorId = actors.Single(g => g.Name == "Carrie Fisher").ActorId, Character =  "Leia Organa", MovieId = movies.Single(g => g.Title == "Return of the Jedi").ID },
+               new ActorMovie { ActorId = actors.Single(g => g.Name == "Harrison Ford").ActorId, Character =  "Han Solo", MovieId = movies.Single(g => g.Title == "Return of the Jedi").ID },
+               new ActorMovie { ActorId = actors.Single(g => g.Name == "David Prowse").ActorId, Character =  "Darth Vader", MovieId = movies.Single(g => g.Title == "Return of the Jedi").ID },
+               #endregion
+ 
+               #region GoldenEye
+               new ActorMovie { ActorId = actors.Single(g => g.Name == "Pierce Brosnan").ActorId, Character =  "James Bond", MovieId = movies.Single(g => g.Title == "GoldenEye").ID },
+               new ActorMovie { ActorId = actors.Single(g => g.Name == "Famke Janssen").ActorId, Character =  "Xenia Onatopp", MovieId = movies.Single(g => g.Title == "GoldenEye").ID },
+               new ActorMovie { ActorId = actors.Single(g => g.Name == "Judi Dench").ActorId, Character =  "M", MovieId = movies.Single(g => g.Title == "GoldenEye").ID },
+               #endregion
+ 
+               #region The World Is Not Enough
+               new ActorMovie { ActorId = actors.Single(g => g.Name == "Pierce Brosnan").ActorId, Character =  "James Bond", MovieId = movies.Single(g => g.Title == "The World Is Not Enough").ID },
+               new ActorMovie { ActorId = actors.Single(g => g.Name == "Sophie Marceau").ActorId, Character =  "Elektra King", MovieId = movies.Single(g => g.Title == "The World Is Not Enough").ID },
+               new ActorMovie { ActorId = actors.Single(g => g.Name == "Judi Dench").ActorId, Character =  "M", MovieId = movies.Single(g => g.Title == "The World Is Not Enough").ID },
+               #endregion
+ 
+               #region Die Another Day
+               new ActorMovie { ActorId = actors.Single(g => g.Name == "Pierce Brosnan").ActorId, Character =  "James Bond", MovieId = movies.Single(g => g.Title == "Die Another Day").ID },
+               new ActorMovie { ActorId = actors.Single(g => g.Name == "Halle Berry").ActorId, Character =  "Giacinta 'Jinx' Johnson", MovieId = movies.Single(g => g.Title == "Die Another Day").ID },
+               new ActorMovie { ActorId = actors.Single(g => g.Name == "Judi Dench").ActorId, Character =  "M", MovieId = movies.Single(g => g.Title == "Die Another Day").ID },
+               #endregion
+ 
+               #region Tomorrow Never Dies
+               new ActorMovie { ActorId = actors.Single(g => g.Name == "Pierce Brosnan").ActorId, Character =  "James Bond", MovieId = movies.Single(g => g.Title == "Tomorrow Never Dies").ID },
+               new ActorMovie { ActorId = actors.Single(g => g.Name == "Michelle Yeoh").ActorId, Character =  "Wai Lin", MovieId = movies.Single(g => g.Title == "Tomorrow Never Dies").ID },
+               new ActorMovie { ActorId = actors.Single(g => g.Name == "Judi Dench").ActorId, Character =  "M", MovieId = movies.Single(g => g.Title == "Tomorrow Never Dies").ID },
+                #endregion
+ 
+               #region Skyfall
+               new ActorMovie { ActorId = actors.Single(g => g.Name == "Daniel Craig").ActorId, Character =  "James Bond", MovieId = movies.Single(g => g.Title == "Skyfall").ID },
+               new ActorMovie { ActorId = actors.Single(g => g.Name == "Javier Bardem").ActorId, Character =  "Raoul Silva", MovieId = movies.Single(g => g.Title == "Skyfall").ID },
+               new ActorMovie { ActorId = actors.Single(g => g.Name == "Judi Dench").ActorId, Character =  "M", MovieId = movies.Single(g => g.Title == "Skyfall").ID },
+                #endregion
+ 
+ 
+ 
+                #region Casino Royale
+                new ActorMovie { ActorId = actors.Single(g => g.Name == "Daniel Craig").ActorId, Character =  "James Bond", MovieId = movies.Single(g => g.Title == "Casino Royale").ID },
+                new ActorMovie { ActorId = actors.Single(g => g.Name == "Eva Green").ActorId, Character =  "Vesper Lynd", MovieId = movies.Single(g => g.Title == "Casino Royale").ID },
+                new ActorMovie { ActorId = actors.Single(g => g.Name == "Mads Mikkelsen").ActorId, Character =  "Le Chiffre", MovieId = movies.Single(g => g.Title == "Casino Royale").ID },
+
+                new ActorMovie { ActorId = actors.Single(g => g.Name == "Judi Dench").ActorId, Character =  "M", MovieId = movies.Single(g => g.Title == "Casino Royale").ID },
+                #endregion
+ 
+            
+            };
+
+            actorCharacters.ForEach(s => context.Characters.AddOrUpdate(ac => new { ac.ActorId, ac.MovieId }, s));
+
+            context.SaveChanges();
+
+
         }
 
     }
