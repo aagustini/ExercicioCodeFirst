@@ -1,0 +1,41 @@
+﻿@model IEnumerable<PL.Models.Genre>
+
+@helper Truncate(string input, int length)
+{
+if (input.Length <= length)
+{
+        @input
+}
+else
+{
+        @input.Substring(0, length)<text>...</text>
+}
+}
+
+
+
+
+@{
+    ViewBag.Title = "Movie App - Genres";
+}
+
+<h2>Genres</h2>
+
+<table class="table">
+    <tr>
+        <th> @Html.DisplayNameFor(model => model.Name) </th>
+        <th> @Html.DisplayNameFor(model => model.Description) </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td> @Html.ActionLink(item.Name, "Browse", "Movie", new { genre = item.Name }, null) </td>
+            @*<td> @Html.DisplayFor(modelItem => item.Description) </td>*@
+            <td>  @Truncate(item.Description, 80) </td>
+        </tr>
+    }
+
+</table>
+

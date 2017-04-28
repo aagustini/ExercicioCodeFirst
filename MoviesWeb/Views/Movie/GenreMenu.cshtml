@@ -1,0 +1,15 @@
+﻿@model IEnumerable<PL.Models.Genre>
+
+<div class="container">
+
+    <div class="btn-group btn-group-justified">
+        @foreach (var genre in Model)
+        {
+
+            @Html.ActionLink(genre.Name,
+                    "Browse", "Movie",
+                    new { Genre = genre.Name }, new { @class = "btn btn-primary" })  }
+        @Html.ActionLink("More...", "Index", "Genre", null, new { @class = "btn btn-primary" })
+    </div>
+</div>
+

@@ -15,6 +15,8 @@ namespace PL.Models
 
         public DbSet<Actor> Actors { get; set; }
         public DbSet<ActorMovie> Characters { get; set; }
+
+        public DbSet<Log> Logs { get; set; }
     }
 }
     

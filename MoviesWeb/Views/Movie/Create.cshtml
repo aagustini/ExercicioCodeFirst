@@ -77,4 +77,15 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script>
+           $(function() {
+            $( "#ReleaseDate" ).datepicker({
+              showOn: "button",
+              buttonImage: "../../images/calendar.gif",
+              buttonImageOnly: true,
+              buttonText: "Select date"
+            });
+          });
+    </script>
+
 }

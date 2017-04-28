@@ -60,6 +60,23 @@
 
     </dl>
 </div>
+
+
+<img width="200" src="@Url.Action("GetImage", "Movie", new { id=Model.ID})" />
+
+@if (Model.ImageUrl != null)
+{
+    <img width="200" src="@Model.ImageUrl" alt=@Model.Title>
+}
+else
+{
+    @: ulr image not available
+}
+
+
+
+
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
     @Html.ActionLink("Back to List", "Index")

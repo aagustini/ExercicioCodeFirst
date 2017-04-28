@@ -60,6 +60,14 @@
     <Compile Include="Migrations\201704102103284_Casting.Designer.cs">
       <DependentUpon>201704102103284_Casting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704252321125_Logging.cs" />
+    <Compile Include="Migrations\201704252321125_Logging.Designer.cs">
+      <DependentUpon>201704252321125_Logging.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704261322371_Imagens.cs" />
+    <Compile Include="Migrations\201704261322371_Imagens.Designer.cs">
+      <DependentUpon>201704261322371_Imagens.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,6 +88,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704102103284_Casting.resx">
       <DependentUpon>201704102103284_Casting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704252321125_Logging.resx">
+      <DependentUpon>201704252321125_Logging.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704261322371_Imagens.resx">
+      <DependentUpon>201704261322371_Imagens.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
